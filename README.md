@@ -1,2 +1,2 @@
 # rf
-A sample of Info website made using react JS
+A sample of Blog  website made using django and react JS
