@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Blogs extends React.Component {
   state = {
@@ -16,7 +17,7 @@ class Blogs extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1>Trending Blogs </h1>
+        <h1 style={{textAlign:"center", color:"#990099"}}>Trending Blogs</h1>
         <div className="row">
           {this.state.blogs.map((blog) => (
             <div className="col-md-4">
@@ -27,8 +28,12 @@ class Blogs extends React.Component {
                   style={{ width: "100%" }}
                 ></img>
                 <div className="caption">
-                  <p>{blog.heading}</p>
+                <Link to={"/detail"} className="nav-link">
+                <h3>{blog.heading}</h3>
+                </Link>
+                  
                 </div>
+                  <p>Published on: {blog.date}</p>
               </div>
             </div>
           ))}
