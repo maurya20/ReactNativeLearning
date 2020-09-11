@@ -7,7 +7,7 @@ class DetailBlog extends Component {
   };
 
   componentDidMount() {
-    // const ID = this.props.match.params.articleID;
+    //  const blogid= this.props.match.params.blog.id;
     axios.get(`http://127.0.0.1:8000/mapi/7`).then((res) => {
       this.setState({
         blog: res.data,
