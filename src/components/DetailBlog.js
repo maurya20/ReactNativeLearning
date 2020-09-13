@@ -3,14 +3,20 @@ import axios from "axios";
 
 class DetailBlog extends Component {
   state = {
-    blog: {},
+    detailblog: {},
   };
 
   componentDidMount() {
-    //  const blogid= this.props.match.params.blog.id;
-    axios.get(`http://127.0.0.1:8000/mapi/7`).then((res) => {
+    // console.log(this.props.match.params)
+    // const blogid= this.props.params.blogid;
+    const a = window.location.search
+    const urlParams = new URLSearchParams(a);
+    // console.log(urlParams.get)
+    const myParam = urlParams.get('id');
+    console.log(myParam)
+    axios.get(`http://127.0.0.1:8000/mapi/${myParam}`).then((res) => {
       this.setState({
-        blog: res.data,
+        detailblog: res.data,
       });
     });
   }
@@ -19,12 +25,12 @@ class DetailBlog extends Component {
       <div className="container">
         <h3>Deatiled Blog </h3>
         <img
-          src={this.state.blog.pic}
+          src={this.state.detailblog.pic}
           alt="Lights"
           style={{ width: "80%", height: "400px" }}
         ></img>
-        <h4> {this.state.blog.heading} </h4>
-        <p>{this.state.blog.blog}</p>
+        <h4> {this.state.detailblog.heading} </h4>
+    <p>{this.state.detailblog.blog}</p>
       </div>
     );
   }

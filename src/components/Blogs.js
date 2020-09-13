@@ -13,7 +13,7 @@ class Blogs extends React.Component {
         this.setState({ blogs: data });
         console.log(this.state.blogs);
       })
-      .catch(console.log);
+      .catch((err)=>console.log(err,"Error"));
   }
   render() {
     return (
@@ -34,7 +34,7 @@ class Blogs extends React.Component {
                   style={{ width: "100%" }}
                 ></img>
                 <div className="caption">
-                <Link to={"/detail"}>
+                <Link to={`/detail?id=${blog.id}`}>
                 <h3>{blog.heading}</h3>
                 </Link>
                   
