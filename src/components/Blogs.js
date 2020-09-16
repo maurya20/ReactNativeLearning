@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 
@@ -23,9 +23,7 @@ class Blogs extends React.Component {
         <h1 style={{textAlign:"center", color:"#990099"}}>Trending Blogs</h1>
         <div className="row">
           {this.state.blogs.map((blog) => (
-             <React.Fragment key={blog.id}>
              
-        
             <div className="col-md-4">
               <div className="thumbnail">
                 <img
@@ -42,7 +40,7 @@ class Blogs extends React.Component {
                   <p>Published on: {blog.date}</p>
               </div>
             </div>
-            </React.Fragment>
+           
           ))}
         </div>
       </div>

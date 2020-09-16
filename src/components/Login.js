@@ -47,7 +47,7 @@ class Login extends Component {
 					Don't have an account?<Link to={'/'}>Sign Up</Link>
 				</div>
 				<div className="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
+					<a href="/home">Forgot your password?</a>
 				</div>
 			</div>
 		</div>

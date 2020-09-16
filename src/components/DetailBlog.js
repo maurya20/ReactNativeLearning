@@ -3,7 +3,7 @@ import axios from "axios";
 
 class DetailBlog extends Component {
   state = {
-    detailblog: {},
+    detailblog: [],
   };
 
   componentDidMount() {
@@ -13,17 +13,24 @@ class DetailBlog extends Component {
     const urlParams = new URLSearchParams(a);
     // console.log(urlParams.get)
     const myParam = urlParams.get('id');
-    console.log(myParam)
+    // console.log(myParam)
     axios.get(`http://127.0.0.1:8000/mapi/${myParam}`).then((res) => {
       this.setState({
         detailblog: res.data,
       });
     });
   }
+  
+
   render() {
+
+    // console.log(this.state.detailblog.user)
     return (
+      
       <div className="container">
         <h3>Deatiled Blog </h3>
+    <p>Published on: {this.state.detailblog.date}</p>
+    <p>Bloger: {this.state.detailblog.author}</p>
         <img
           src={this.state.detailblog.pic}
           alt="Lights"
@@ -35,5 +42,6 @@ class DetailBlog extends Component {
     );
   }
 }
+
 
 export default DetailBlog;
