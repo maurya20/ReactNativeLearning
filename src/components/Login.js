@@ -51,7 +51,6 @@ class Login extends Component {
                 </div>
               </form>
             </div>
-            <br />
           </div>
         </div>
 
