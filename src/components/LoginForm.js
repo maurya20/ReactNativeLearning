@@ -43,6 +43,6 @@ class LoginForm extends React.Component {
 
 export default LoginForm;
 
-LoginForm.propTypes = {
-  handle_login: PropTypes.func.isRequired
-};
+// LoginForm.propTypes = {
+//   handle_login: PropTypes.func.isRequired
+// };
