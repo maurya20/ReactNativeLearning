@@ -14,15 +14,19 @@ const Header = (props) => {
       );
     
       const logged_in_nav = (
-        <ul>
-          <li onClick={props.handle_logout}>logout</li>
-        </ul>
+          <Nav style={{color:"#00ff00"}}>
+        <h3> {props.logged_in
+            ? `Hello, ${props.username}`
+            : 'Please Log In'}</h3>
+       
+          <h3 style={{color:"#990099", padding:10}} onClick={props.handle_logout}>Logout</h3>
+          </Nav>
       );
     return (
         <div>
         
         <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
-        <Navbar.Brand href="#home">Blog Website</Navbar.Brand>
+        <Navbar.Brand href="#home"><h1>Blog Website</h1></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">

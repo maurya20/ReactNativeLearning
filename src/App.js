@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
 import Header from './components/Header'
+import Home from './components/Home'
 // import './App.css';
 
 class App extends Component {
@@ -97,14 +98,16 @@ class App extends Component {
           logged_in={this.state.logged_in}
           display_form={this.display_form}
           handle_logout={this.handle_logout}
-        />
+        {...this.state}/>
         {form}
-        <h3>
+        {/* <h3>
           {this.state.logged_in
             ? `Hello, ${this.state.username}`
             : 'Please Log In'}
-        </h3>
+        </h3> */}
+        {/* <Home {...this.state} /> */}
       </div>
+      
     );
   }
 }
