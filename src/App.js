@@ -91,7 +91,7 @@ class App extends Component {
       default:
         form = null;
     }
-
+    console.log(this.state.logged_in)
     return (
       <div className="App">
         <Header
@@ -105,7 +105,7 @@ class App extends Component {
             ? `Hello, ${this.state.username}`
             : 'Please Log In'}
         </h3> */}
-        {/* <Home {...this.state} /> */}
+        <Home {...this.state} />
       </div>
       
     );

@@ -3,15 +3,24 @@ import React from 'react';
 
 
 class Home extends React.Component {
-state = {
+  constructor(props){
+    super(props)
+this.state = {
         data: [],
         loaded: false,
         placeholder: "Loading",
       };
     
-  
+    }
     componentDidMount() {
-      fetch("http://127.0.0.1:8000/blogs")
+       
+      fetch("http://127.0.0.1:8000/Bloglist", {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `JWT ${localStorage.getItem('token')}`
+        }
+      }
+      )
         .then((response) => {
           if (response.status > 400) {
             return this.setState(() => {
@@ -30,19 +39,20 @@ state = {
         });
     }
   
+  
     render() {
-        console.log(this.state.logged_in)
+        console.log(localStorage.getItem('token'))
       return (
           <div className="container">
         <div className="row">
           {this.state.data.map((contact) => {
             return (
-              <div className="col-md-4">
+              <div className="col-md-4" key={contact.id}>
                 <div className="thumbnail">
                   <img src={contact.pic} alt="Nature" style={{width:"100%"}}></img>
                   <div className="caption">
                     <p style={{color:"black"}}>{contact.title}</p>
-                    <p>Published on: {contact.category} </p>
+                    <p>Category: {contact.category} </p>
                   </div>
                 </div>
               </div>
@@ -54,4 +64,3 @@ state = {
     }
   }
  export default Home;
-//  console.log(this.state.logged_in)
