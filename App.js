@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View,StyleSheet } from 'react-native';
+import { Text, View,StyleSheet, Button,Alert } from 'react-native';
 
 
 
@@ -12,11 +12,15 @@ const styles = StyleSheet.create({
      flex:2
    }
  })
-const HelloWorldApp = () => {
+const App = () => {
   return (
     <View style={ styles.center }>
       <Text > Hello, world!</Text>
+      <Button
+        title="Press me"
+        onPress={() => Alert.alert('Simple Button pressed')}
+      />
     </View>
   )
 }
-export default HelloWorldApp;
+export default App;
