@@ -17,8 +17,12 @@ const App = () => {
     <View style={ styles.center }>
       <Text > Hello, world!</Text>
       <Button
-        title="Press me"
-        onPress={() => Alert.alert('Simple Button pressed')}
+        title="click me"
+        onPress={() => 
+          Alert.alert("My title","My messege",[
+            {text:"yes", onPress:()=> console.log("Yes")},
+            {text:"No", onPress:()=>console.log("No")},
+          ])}
       />
     </View>
   )
