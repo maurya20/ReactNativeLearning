@@ -1,17 +1,30 @@
-import React from 'react';
-import { Button, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, FlatList, Text, View } from 'react-native';
 
-const HelloWorldApp = () => {
+const App = () => {
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('https://reactnative.dev/movies.json')
+      .then((response) => response.json())
+      .then((json) => setData(json.movies))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+  }, []);
+
   return (
-    <View style={{flex:1,backgroundColor:'#fff',textAlign:'center'}}>
-      <Text style={{textAlign:'center',backgroundColor:'red',flex:1, marginTop:27,fontSize:50}}>My App </Text>
-      <View style={{backgroundColor:'gray',flex:5}}/>
-      <Button title="Button" onPress={()=>alert("You pressed the button")}  style ={{
-              
-                }}/>
-      <View style={{backgroundColor:'green',flex:1}}/>
-      
+    <View style={{ flex: 1, padding: 24,backgroundColor:'gray' }}>
+      {isLoading ? <ActivityIndicator/> : (
+        <FlatList
+          data={data}
+          keyExtractor={({ id }, index) => id}
+          renderItem={({ item }) => (
+            <Text style={{ flex: 1, padding: 24,backgroundColor:'green',fontSize:30 }}>{item.title}, {item.releaseYear}</Text>
+          )}
+        />
+      )}
     </View>
-  )
+  );
 }
-export default HelloWorldApp;
+export default App
