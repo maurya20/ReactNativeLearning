@@ -1,26 +1,17 @@
-// import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {View,Text,StyleSheet} from 'react-native';
-import Home from './app/Home'
+import { Button, Text, View } from 'react-native';
 
-
-const App = () => {
+const HelloWorldApp = () => {
   return (
-    <View style={styles.main}>
-
-<Text>
-  HIIIIII HIIII HIIIIII HIIIIII HIIIIII HIIIIII HIIIIII HIIIIII HIIIIIIII
-</Text>
-<Home/>
+    <View style={{flex:1,backgroundColor:'#fff',textAlign:'center'}}>
+      <Text style={{textAlign:'center',backgroundColor:'red',flex:1, marginTop:27,fontSize:50}}>My App </Text>
+      <View style={{backgroundColor:'gray',flex:5}}/>
+      <Button title="Button" onPress={()=>alert("You pressed the button")}  style ={{
+              
+                }}/>
+      <View style={{backgroundColor:'green',flex:1}}/>
+      
     </View>
-  
   )
 }
-export default App;
-
-
-const styles = StyleSheet.create({
-  main:{
-    marginTop:40
-  }
-})
+export default HelloWorldApp;

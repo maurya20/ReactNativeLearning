@@ -14,10 +14,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23872a93-19b8-4eb0-8ccd-f1920f74bb6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/List.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PresentationalComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +33,21 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
+    <property name="ApkExportedModule" value="firstNative" />
+    <property name="BundleExportedModule" value="firstNative" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle --build-file" />
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -51,6 +62,9 @@
     </task>
     <servers />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -64,17 +78,33 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="95" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603777174218">
+    <state x="121" y="0" key="#Project_Structure" timestamp="1604062871734">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="95" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1603777174218" />
-    <state x="100" y="100" width="1080" height="480" key="AVDManager" timestamp="1603775519050">
+    <state x="121" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1604062871734" />
+    <state x="95" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604062644727">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="100" y="100" width="1080" height="480" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1603775519050" />
-    <state x="206" y="0" key="SettingsEditor" timestamp="1603777270770">
+    <state x="95" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1604062644727" />
+    <state x="100" y="100" width="1080" height="480" key="AVDManager" timestamp="1604123945209">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="206" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1603777270770" />
+    <state x="100" y="100" width="1080" height="480" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1604123945209" />
+    <state x="421" y="82" key="FileChooserDialogImpl" timestamp="1604062424329">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604062424329" />
+    <state x="206" y="0" key="SettingsEditor" timestamp="1604120090220">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="206" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604120090220" />
+    <state x="297" y="153" width="672" height="677" key="run.anything.popup" timestamp="1604062884715">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="153" width="672" height="677" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1604062884715" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1604062884652">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1604062884652" />
   </component>
 </project>
