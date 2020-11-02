@@ -1,30 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Text, TextInput, View } from 'react-native';
 
-const App = () => {
-  const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch('https://reactnative.dev/movies.json')
-      .then((response) => response.json())
-      .then((json) => setData(json.movies))
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
-  }, []);
-
+const PizzaTranslator = () => {
+  const [text, setText] = useState('');
   return (
-    <View style={{ flex: 1, padding: 24,backgroundColor:'gray' }}>
-      {isLoading ? <ActivityIndicator/> : (
-        <FlatList
-          data={data}
-          keyExtractor={({ id }, index) => id}
-          renderItem={({ item }) => (
-            <Text style={{ flex: 1, padding: 24,backgroundColor:'green',fontSize:30 }}>{item.title}, {item.releaseYear}</Text>
-          )}
-        />
-      )}
+    <View style={{padding: 30}}>
+      <TextInput
+        style={{marginTop: 40,fontSize:30,borderBottomEndRadius:5}}
+        placeholder="Type here to translate!"
+        onChangeText={(e) => setText(e)}
+        defaultValue={text}
+      />
+      <Text style={{padding: 10, fontSize: 42}}>
+        {text}
+      </Text>
     </View>
   );
 }
-export default App
+
+export default PizzaTranslator;
