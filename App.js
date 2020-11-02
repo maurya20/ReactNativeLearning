@@ -1,5 +1,5 @@
 import React,{ useEffect, useState }  from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View,Image } from 'react-native';
 
 
 
@@ -21,9 +21,11 @@ const App = () => {
       <Text style={{color:"red",textAlign:"center",fontSize:60,backgroundColor:"yellow"}}>Posts App</Text>
       <FlatList
         data={data}
-        keyExtractor={({ id }) => id}
+        // keyExtractor={({ id }) => id}
+        keyExtractor={item => item.id.toString()}
         renderItem={({item}) => (
         <View>
+          <Image source={{uri:`https://picsum.photos/200/30${item.id}`}} style={{width: 400, height: 400}} />
         <Text style={styles.item}>❝ {item.title} ❞</Text>
         <Text style={styles.postBody}>{item.body}</Text>
         </View>
