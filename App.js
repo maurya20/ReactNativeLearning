@@ -12,11 +12,11 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
+          name="My App"
           component={HomeScreen}
-          options={{ title: 'Welcome to my App' }}
+          // options={{ title: 'Welcome to my App' }}
         />
-        <Stack.Screen name="herProfile" component={ProfileScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'Welcome to my Profile' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -27,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <TouchableOpacity
       onPress={() =>
-        navigation.navigate('herProfile', { name: 'Jane' })
+        navigation.navigate('Profile')
       }
     ><Text>Go to Jane's profile </Text>
     <Image source={{uri:"https://source.unsplash.com/user/erondu"}} style={{width:400, height:300}}/>
