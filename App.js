@@ -1,57 +1,39 @@
-import React,{ useEffect, useState }  from 'react';
-import { FlatList, StyleSheet, Text, View,Image } from 'react-native';
+import * as React from 'react';
+import { View, Text, Button } from 'react-native';  
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
+const Stack = createStackNavigator();
 
-
-const App = () => {
-  const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch('http://jsonplaceholder.typicode.com/posts')
-      .then((response) => response.json())
-      .then((json) => setData(json))
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
-  }, []);
-
-
+const MyStack = () => {
   return (
-    <View style={styles.container}>
-      <Text style={{color:"red",textAlign:"center",fontSize:60,backgroundColor:"yellow"}}>Posts App</Text>
-      <FlatList
-        data={data}
-        // keyExtractor={({ id }) => id}
-        keyExtractor={item => item.id.toString()}
-        renderItem={({item}) => (
-        <View>
-          <Image source={{uri:`https://picsum.photos/200/30${item.id}`}} style={{width: 400, height: 400}} />
-        <Text style={styles.item}>❝ {item.title} ❞</Text>
-        <Text style={styles.postBody}>{item.body}</Text>
-        </View>
-        )}
-      />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: 'Welcome' }}
+        />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-  }
-  
-  const styles = StyleSheet.create({
-    container: {
-     flex: 1,
-     paddingTop: 22
-    },
-    item: {
-      padding: 10,
-      fontSize: 38,
-      color:"blue"
-    },
-  postBody:{
-    padding:10,
-    fontSize:20,
-    color:'#1B3D6C'
-  }
-  });
-  
+};
 
 
-export default App
+const HomeScreen = ({ navigation }) => {
+  return (
+    <Button
+      title="Go to Jane's profile"
+      onPress={() =>
+        navigation.navigate('Profile', { name: 'Jane' })
+      }
+    />
+  );
+};
+const ProfileScreen = () => {
+  return <Text>This is Jane's profile</Text>;
+};
+
+
+export default MyStack

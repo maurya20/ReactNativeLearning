@@ -21,6 +21,10 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "description": "Rendering data from api ",
+    "android": {
+      "package": "com.mukesh20.firstNative"
     }
   }
 }
