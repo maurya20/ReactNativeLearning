@@ -1,43 +1,40 @@
 import * as React from 'react';
+import { Button, View } from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { View, Text, Image } from 'react-native';
-import ProfileScreen from "./src/ProfileScreen"
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import AboutScreen from "./src/About"
+import ProfileScreen from "./src/ProfileScreen"
 
+function HomeScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button
+        onPress={() => navigation.navigate('Notifications')}
+        title="Go to notifications"
+      />
+    </View>
+  );
+}
 
-const Stack = createStackNavigator();
+function NotificationsScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button onPress={() => navigation.goBack()} title="Go back home" />
+    </View>
+  );
+}
 
-const App = () => {
+const Drawer = createDrawerNavigator();
+
+export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{ title: 'Welcome to my App' }}
-        />
-        <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'Welcome to my Profile' }} />
-      
-        <Stack.Screen name="About" component={AboutScreen} options={{ title: 'About Me-' }} />
-      </Stack.Navigator>
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+        <Drawer.Screen name="Profile" component={ProfileScreen} />
+        <Drawer.Screen name="About" component={AboutScreen} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
-};
-
-
-const HomeScreen = ({ navigation }) => {
-  return (
-    <TouchableOpacity
-      onPress={() =>
-        navigation.navigate('Profile')
-      }
-    ><Text>Go to Jane's profile </Text>
-    <Image source={{uri:"https://source.unsplash.com/user/erondu"}} style={{width:400, height:300}}/>
-    </TouchableOpacity>
-  );
-};
-
-
-export default App
+}

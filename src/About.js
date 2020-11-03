@@ -6,7 +6,7 @@ import { View, Text, Image } from 'react-native';
 
 const AboutScreen = ({ navigation }) => {
     return (
-    <View>
+    <View style={{padding:20}}>
     <Text>What is lorem ipsum?
 Lorem ipsum has become the industry standard for design mockups and prototypes. By adding a little bit of Latin to a mockup, you’re able to show clients a more complete version of your design without actually having to invest time and effort drafting copy.
 
